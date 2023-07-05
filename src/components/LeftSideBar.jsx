@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../assets/logo-dark.svg";
 import boardIcon from "../assets/icon-board.svg";
 import light_icon from "../assets/icon-light-theme.svg";
@@ -7,13 +6,15 @@ import hide_icon from "../assets/icon-hide-sidebar.svg";
 
 const LeftSideBar = () => {
   return (
-    <div className="bg-[#FFFFFF] h-screen relative drop-shadow border w-[300px]">
-      <header className="p-6">
-        <img src={Logo} alt="kanban_logo" />
-      </header>
+    <div className="bg-[#FFFFFF] h-screen drop-shadow border w-[300px] flex flex-col justify-between">
+      <div>
+        <header className="p-6">
+          <img src={Logo} alt="kanban_logo" />
+        </header>
+      </div>
 
-      {/* board section   */}
-      <div className="sidebar_body flex flex-col flex-grow justify-between outline">
+      <div className="sidebar_body flex flex-col flex-grow justify-between">
+        {/* board section   */}
         <div>
           <h3 className="mx-5 text-slate-500 ">ALL BOARDS (3)</h3>
           <div className="boardlist_container">
@@ -39,9 +40,9 @@ const LeftSideBar = () => {
           </div>
         </div>
 
-        <div className="bottom_actions">
+        <div>
           {/* night mode/light mode */}
-          <div className="flex flex-row items-center justify-around border mx-5 bg-[#F4F7FD] rounded p-4">
+          <div className="flex flex-row items-center justify-around border-none mx-5 bg-[#F4F7FD] rounded p-4">
             <div>
               <img className="h-6" src={light_icon} alt="light_icon" />
             </div>
