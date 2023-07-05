@@ -6,7 +6,7 @@ import hide_icon from "../assets/icon-hide-sidebar.svg";
 
 const LeftSideBar = () => {
   return (
-    <div className="bg-[#FFFFFF] h-screen drop-shadow border w-[300px] flex flex-col justify-between">
+    <div className="hidden md:flex bg-[#FFFFFF] h-screen drop-shadow border w-[300px] flex-col justify-between">
       <div>
         <header className="p-6">
           <img src={Logo} alt="kanban_logo" />
