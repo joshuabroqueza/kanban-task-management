@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import boardIcon from "../assets/icon-board.svg";
 
-const Boards = ({ boards }) => {
+const Boards = ({ boards, dispatch }) => {
   const [selectedBoard, setSelectedBoard] = useState(null);
+  console.log(boards);
 
-  const handleBoardClick = (name) => {
-    setSelectedBoard(name);
+  let numberOfGroups = boards.length;
+
+  const handleBoardClick = (board) => {
+    setSelectedBoard(board.name);
+    console.log(board);
+    dispatch({ type: "selectGroup", payload: board.columns });
   };
 
   return (
     <div>
-      <h3 className="mx-5 text-slate-500 ">ALL BOARDS (3)</h3>
+      <h3 className="mx-5 text-slate-500 ">ALL BOARDS ({numberOfGroups})</h3>
       <div className="boardlist_container">
         {boards.map((board) => (
           <div
@@ -20,7 +25,7 @@ const Boards = ({ boards }) => {
                 ? "bg-[#635FC7] rounded-r-full drop-shadow"
                 : ""
             }`}
-            onClick={() => handleBoardClick(board.name)}
+            onClick={() => handleBoardClick(board)}
           >
             <img className="mx-2" src={boardIcon} alt="board_Icon" />
             <span

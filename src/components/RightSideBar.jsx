@@ -1,7 +1,11 @@
 import dottedIcons from "../assets/icon-vertical-ellipsis.svg";
 import Logo_mobile from "../assets/logo-mobile.svg";
+import Tasks from "./Tasks";
 
-const RightSideBar = () => {
+import React from "react";
+
+const RightSideBar = ({ selectedGroups }) => {
+  console.log(selectedGroups);
   return (
     <div className="w-full flex flex-col h-screen">
       {/* header */}
@@ -24,16 +28,21 @@ const RightSideBar = () => {
       </div>
 
       {/* main content */}
-      <div className="flex justify-center flex-grow items-center">
-        <div className="flex flex-col justify-center items-center">
-          <p className="p-5 text-slate-400 mx-5 text-center">
-            This board is empty. Create a new column to get started.
-          </p>
-          <button className="text-white bg-[#635FC7] rounded-full px-6 py-3 shadow-md hover:shadow-xl active:scale-90 transition duration-150">
-            + Add New Column
-          </button>
+
+      {selectedGroups.length > 0 ? (
+        <Tasks selectedGroups={selectedGroups} />
+      ) : (
+        <div className="flex justify-center flex-grow items-center">
+          <div className="flex flex-col justify-center items-center">
+            <p className="p-5 text-slate-400 mx-5 text-center">
+              This board is empty. Create a new column to get started.
+            </p>
+            <button className="text-white bg-[#635FC7] rounded-full px-6 py-3 shadow-md hover:shadow-xl active:scale-90 transition duration-150">
+              + Add New Column
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

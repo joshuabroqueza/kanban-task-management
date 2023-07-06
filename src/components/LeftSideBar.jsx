@@ -4,14 +4,14 @@ import hide_icon from "../assets/icon-hide-sidebar.svg";
 import Header from "./Header";
 import Boards from "./Boards";
 
-const LeftSideBar = ({ boards }) => {
+const LeftSideBar = ({ boards, dispatch }) => {
   return (
     <div className="hidden md:flex bg-[#FFFFFF] h-screen drop-shadow border w-[300px] flex-col justify-between">
       <Header />
 
       <div className="sidebar_body flex flex-col flex-grow justify-between">
         {/* board section   */}
-        <Boards boards={boards} />
+        <Boards boards={boards} dispatch={dispatch} />
 
         <div>
           {/* night mode/light mode */}

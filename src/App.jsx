@@ -444,14 +444,17 @@ const initialState = {
       ],
     },
   ],
+  selectedGroups: [],
 };
 
 function reducer(state, action) {
+  console.log(action.payload);
+
   switch (action.type) {
     case "selectGroup":
       return {
         ...state,
-        activeGroup: action.payload,
+        selectedGroups: action.payload,
       };
 
     default:
@@ -460,11 +463,14 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [{ boards }, dispatch] = useReducer(reducer, initialState);
+  const [{ boards, selectedGroups }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   return (
     <div className="flex flex-row">
-      <LeftSideBar boards={boards} />
-      <RightSideBar />
+      <LeftSideBar boards={boards} dispatch={dispatch} />
+      <RightSideBar selectedGroups={selectedGroups} />
     </div>
   );
 }
