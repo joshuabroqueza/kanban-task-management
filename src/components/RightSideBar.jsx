@@ -1,4 +1,3 @@
-import React from "react";
 import dottedIcons from "../assets/icon-vertical-ellipsis.svg";
 import Logo_mobile from "../assets/logo-mobile.svg";
 
@@ -6,7 +5,6 @@ const RightSideBar = () => {
   return (
     <div className="w-full flex flex-col h-screen">
       {/* header */}
-
       <div className="flex flex-row justify-between items-center shadow-sm p-5">
         <div className="flex flex-row justify-center items-center">
           <header className="p-3">
@@ -24,6 +22,7 @@ const RightSideBar = () => {
           </button>
         </div>
       </div>
+
       {/* main content */}
       <div className="flex justify-center flex-grow items-center">
         <div className="flex flex-col justify-center items-center">

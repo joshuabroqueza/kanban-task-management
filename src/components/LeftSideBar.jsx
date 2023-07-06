@@ -1,44 +1,17 @@
-import Logo from "../assets/logo-dark.svg";
-import boardIcon from "../assets/icon-board.svg";
 import light_icon from "../assets/icon-light-theme.svg";
 import dark_icon from "../assets/icon-dark-theme.svg";
 import hide_icon from "../assets/icon-hide-sidebar.svg";
+import Header from "./Header";
+import Boards from "./Boards";
 
-const LeftSideBar = () => {
+const LeftSideBar = ({ boards }) => {
   return (
     <div className="hidden md:flex bg-[#FFFFFF] h-screen drop-shadow border w-[300px] flex-col justify-between">
-      <div>
-        <header className="p-6">
-          <img src={Logo} alt="kanban_logo" />
-        </header>
-      </div>
+      <Header />
 
       <div className="sidebar_body flex flex-col flex-grow justify-between">
         {/* board section   */}
-        <div>
-          <h3 className="mx-5 text-slate-500 ">ALL BOARDS (3)</h3>
-          <div className="boardlist_container">
-            <div className="flex flex-row items-center p-3 my-4 drop-shadow mr-5 rounded-r-full bg-[#635FC7]">
-              <img className="mx-2" src={boardIcon} alt="board_Icon" />
-              <span className="text-white">Platform Launch</span>
-            </div>
-            <div className="flex flex-row items-center p-3 my-4 mr-5">
-              <img className="mx-2" src={boardIcon} alt="board_Icon" />
-              <span className="text-slate-500 font-semibold">
-                Marketing Plan
-              </span>
-            </div>
-            <div className="flex flex-row items-center p-3 my-4 mr-5">
-              <img className="mx-2" src={boardIcon} alt="board_Icon" />
-              <span className="text-slate-500 font-semibold">Road Map</span>
-            </div>
-          </div>
-
-          <div className="flex flex-row items-center p-3 my-4 mr-5 text-[#635FC7]">
-            <img className="mx-2" src={boardIcon} alt="board_Icon" />
-            <span className="font-semibold">+ Create New Board</span>
-          </div>
-        </div>
+        <Boards boards={boards} />
 
         <div>
           {/* night mode/light mode */}
