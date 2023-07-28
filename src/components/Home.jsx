@@ -6,6 +6,7 @@ import plus_icon from "../assets/icon-add-task-mobile.svg";
 import ellipsis from "../assets/icon-vertical-ellipsis.svg";
 import board_icon from "../assets/icon-board.svg";
 import hide_icon from "../assets/icon-hide-sidebar.svg";
+import cross_icon from "../assets/icon-cross.svg";
 
 import Addnewboard from "./Addnewboard";
 import Boardlist from "./Boardlist";
@@ -553,41 +554,79 @@ const Home = () => {
         <BoardColumn columns={getActiveBoard.columns} />
       </div>
 
-      <div className="view_task">
+      <div className="edit_task">
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
-          <div className="flex flex-col justify-around px-4 py-8 rounded-md items-center bg-white mx-4 w-[343px] md:w-[480px]">
-            <div>
-              <div className="flex flex-row justify-between">
-                <h1 className="text-bold py-2">
-                  Research pricing points of various competitors and trial
-                  different business models
-                </h1>
-                <button className="mx-4">
-                  <img className="h-5 w-3" src={ellipsis} alt="ellipsis" />
-                </button>
+          <form className="flex flex-col justify-around px-4 py-8 rounded-md items-center bg-white mx-4 w-[343px] md:w-[480px]">
+            <div className="w-full">
+              <h1 className="font-semibold">Add New Task</h1>
+
+              <div className="flex flex-col my-2">
+                <label
+                  className="text-light-grey text-sm font-semibold"
+                  htmlFor="title"
+                >
+                  Title
+                </label>
+                <input
+                  type="text"
+                  className="border p-2 rounded my-2 placeholder:text-sm text-sm"
+                  placeholder="e.g Take a coffee break"
+                />
               </div>
-              <p className="text-xs text-light-grey py-2">
-                We know what we're planning to build for version one. Now we
-                need to finalise the first pricing model we'll use. Keep
-                iterating the subtasks until we have a coherent proposition.
-              </p>
 
-              <h3 className="text-sm font-semibold py-2 text-light-grey">
-                Subtasks (3)
-              </h3>
+              <div className="flex flex-col my-2">
+                <label
+                  className="text-light-grey text-sm font-semibold"
+                  htmlFor="title"
+                >
+                  Description
+                </label>
+                <input
+                  type="text"
+                  className="border p-2 rounded my-2 placeholder:text-sm text-sm"
+                  placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
+                />
+              </div>
 
-              <div>
-                <div className="flex flex-row bg-dark-light py-2 px-2">
-                  <input className="mx-3" type="checkbox" />
-                  <p className="text-xs">
-                    Research competitor pricing and business models
-                  </p>
+              <div className="flex flex-col my-2">
+                <label
+                  className="text-light-grey text-sm font-semibold"
+                  htmlFor="title"
+                >
+                  Subtasks
+                </label>
+                <div className="subtask_container">
+                  <div className="flex flex-row">
+                    <input
+                      type="text"
+                      className="border p-2 rounded my-2 placeholder:text-sm text-sm flex-grow px-3"
+                      placeholder="e.g. Make Coffee"
+                    />
+                    <button className="mx-2">
+                      <img src={cross_icon} alt="cross_icon" />
+                    </button>
+                  </div>
+                  <div className="flex flex-row">
+                    <input
+                      type="text"
+                      className="border p-2 rounded my-2 placeholder:text-sm text-sm flex-grow px-3"
+                      placeholder="e.g. Drink coffee & smile"
+                    />
+                    <button className="mx-2">
+                      <img src={cross_icon} alt="cross_icon" />
+                    </button>
+                  </div>
+                  <div>
+                    <button className="bg-dark-light w-full rounded-full py-2 text-sm drop-shadow-md shadow-sm text-purple font-semibold">
+                      + Add New Subtask
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div>
+              <div className="my-2">
                 <h3 className="my-2 text-sm font-semibold text-light-grey">
-                  Current Status
+                  Status
                 </h3>
                 <select className="border w-full px-2 py-2 rounded">
                   <option value="">Doing</option>
@@ -595,8 +634,11 @@ const Home = () => {
                   <option value="">Done</option>
                 </select>
               </div>
+              <button className="text-white-smoke w-full rounded-full py-2 text-sm shadow-sm drop-shadow-md bg-purple font-semibold">
+                Create Task
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
