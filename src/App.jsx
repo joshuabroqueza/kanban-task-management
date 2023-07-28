@@ -3,6 +3,8 @@ import LeftSideBar from "./components/LeftSideBar";
 import RightSideBar from "./components/RightSideBar";
 import { useReducer } from "react";
 
+import Home from "./components/Home";
+
 const initialState = {
   boards: [
     {
@@ -468,10 +470,11 @@ function App() {
     initialState
   );
   return (
-    <div className="flex flex-row">
-      <LeftSideBar boards={boards} dispatch={dispatch} />
-      <RightSideBar selectedGroups={selectedGroups} />
-    </div>
+    // <div className="flex flex-row">
+    //   <LeftSideBar boards={boards} dispatch={dispatch} />
+    //   <RightSideBar selectedGroups={selectedGroups} />
+    // </div>
+    <Home />
   );
 }
 

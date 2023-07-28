@@ -3,7 +3,7 @@ import React from "react";
 const Tasklist = ({ listOfTask }) => {
   console.log(listOfTask);
   return (
-    <div>
+    <>
       {listOfTask.map((tasks) => (
         <div
           key={tasks.title}
@@ -15,7 +15,7 @@ const Tasklist = ({ listOfTask }) => {
           </p>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

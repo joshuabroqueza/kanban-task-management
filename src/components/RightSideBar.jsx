@@ -7,7 +7,7 @@ import React from "react";
 const RightSideBar = ({ selectedGroups }) => {
   console.log(selectedGroups);
   return (
-    <div className="w-full flex flex-col h-screen">
+    <div className="flex flex-col h-screen w-screen">
       {/* header */}
       <div className="flex flex-row justify-between items-center shadow-sm p-5">
         <div className="flex flex-row justify-center items-center">
@@ -30,7 +30,41 @@ const RightSideBar = ({ selectedGroups }) => {
       {/* main content */}
 
       {selectedGroups.length > 0 ? (
-        <Tasks selectedGroups={selectedGroups} />
+        // <Tasks selectedGroups={selectedGroups} />
+        <div className="flex flex-row overflow-auto bg-[#F4F7FD]">
+          <div className="column_container h-screen outline outline-purple-700 w-[300px] m-2 flex-shrink-0">
+            <div className="flex flex-row items-center m-2 p-3">
+              <div className="h-3 w-3 rounded-full bg-red-400"></div>
+              <div className="p-3 text-slate-500">T O D O ( 4 )</div>
+            </div>
+            <div className="task_container">
+              <div className="w-full my-2 p-2 h-[66px] border rounded bg-white drop-shadow">
+                <h3>treer</h3>
+                <p className="text-sm text-slate-500">substasks</p>
+              </div>
+              <div className="w-full my-2 p-2 h-[66px] border rounded bg-white drop-shadow">
+                <h3>treer</h3>
+                <p className="text-sm text-slate-500">substasks</p>
+              </div>
+            </div>
+          </div>
+          <div className="column_container h-screen outline outline-purple-700 w-[300px] m-2 flex-shrink-0">
+            <div className="flex flex-row items-center m-2 p-3">
+              <div className="h-3 w-3 rounded-full bg-red-400"></div>
+              <div className="p-3 text-slate-500">T O D O ( 4 )</div>
+            </div>
+            <div className="task_container">
+              <div className="w-full my-2 p-2 h-[66px] border rounded bg-white drop-shadow">
+                <h3>treer</h3>
+                <p className="text-sm text-slate-500">substasks</p>
+              </div>
+              <div className="w-full my-2 p-2 h-[66px] border rounded bg-white drop-shadow">
+                <h3>treer</h3>
+                <p className="text-sm text-slate-500">substasks</p>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
         <div className="flex justify-center flex-grow items-center">
           <div className="flex flex-col justify-center items-center">
