@@ -19,12 +19,6 @@ const BoardColumn = ({ columns }) => {
 
             {/* TASK CONTAINER */}
             <TaskSummary tasks={column.tasks} />
-            <div className="h-[88px] flex flex-col justify-center border shadow-lg drop-shadow-sm rounded-xl my-3 py-2 px-4 bg-white">
-              <h1 className="text-bold text-sm truncate">tttt</h1>
-            </div>
-            <div className="h-[88px] flex flex-col justify-center border shadow-lg drop-shadow-sm rounded-xl my-3 py-2 px-4 bg-white">
-              <h1 className="text-bold text-sm truncate">tttt</h1>
-            </div>
           </div>
         </main>
       ))}
